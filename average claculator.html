@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Average Calculator</title>
+</head>
+<body>
+    <h1>Average of Numbers from 1 to 10</h1>
+    <p id="result"></p>
+
+    <script type="text/Javascript">
+        // Array of numbers from 1 to 10
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // Calculate the sum of the numbers
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+
+        // Calculate the average
+        let average = sum / numbers.length;
+
+        // Display the result in the paragraph with id "result"
+        document.getElementById("result").textContent = "The average is: " + average;
+    </script>
+</body>
+</html>

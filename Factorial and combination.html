@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial and Combination Calculation</title>
+</head>
+<body>
+    <h1>Matric Number and Factorial Calculation</h1>
+    <p id="factorialfinal"></p>
+    <p id="combinationfinal"></p>
+
+    <script type="text/javascript">
+        let lastTwoDigits = 53;
+
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            }
+            return n * factorial(n - 1);
+        }
+
+        function combination(n){
+            let y = lastTwoDigits % 10;
+            let x = Math.floor(lastTwoDigits / 10);
+            if (x > y){
+                return (factorial(x) / (factorial(x - y) * factorial(y)));
+            }
+            else if (x == y){
+                return (factorial(x + 1) / (factorial(x + 1 - y) * factorial(y)));
+            }
+            else {
+                return (factorial(y) / (factorial(y - x) * factorial(x)));
+            }
+        }
+
+        let factorialResult = factorial(lastTwoDigits);
+        let combinationResult = combination(lastTwoDigits);
+
+        document.getElementById("factorialfinal").textContent = "The factorial of the last two digits is: " + factorialResult;
+        document.getElementById("combinationfinal").textContent = "The combination of the last two digits is: " + combinationResult;
+    </script>
+</body>
+</html>
